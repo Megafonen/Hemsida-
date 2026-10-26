@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flamingotrucken - Streetfood i Östergötland</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        flamingo: {
+                            pink: '#e81c73',
+                            orange: '#f57a3e',
+                            yellow: '#f9bd39',
+                            dark: '#0a0a0a',
+                            card: '#16161a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+        }
+        
+        .neon-text-pink {
+            text-shadow: 0 0 10px rgba(232, 28, 115, 0.7), 0 0 20px rgba(232, 28, 115, 0.5);
+        }
+        .neon-text-orange {
+            text-shadow: 0 0 10px rgba(245, 122, 62, 0.7), 0 0 20px rgba(245, 122, 62, 0.5);
+        }
+        
+        .glow-button {
+            box-shadow: 0 0 15px rgba(232, 28, 115, 0.5);
+            transition: all 0.3s ease;
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 25px rgba(232, 28, 115, 0.8), 0 0 10px rgba(249, 189, 57, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .menu-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .menu-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #e81c73, #f57a3e, #f9bd39);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .menu-card:hover::before {
+            transform: scaleX(1);
+        }
+    .w-70 {
+}
+    </style>
+</head>
+<body class="antialiased font-sans selection:bg-flamingo-pink selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-flamingo-pink to-flamingo-orange">
+                        FLAMINGOTRUCKEN
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hero" class="text-gray-300 hover:text-flamingo-pink font-semibold transition">Hem</a>
+                    <a href="#meny" class="text-gray-300 hover:text-flamingo-yellow font-semibold transition">Meny</a>
+                    <a href="#hitta" class="text-gray-300 hover:text-flamingo-pink font-semibold transition">Hitta oss</a>
+                    <a href="#boka" class="text-gray-300 hover:text-flamingo-orange font-semibold transition">Boka oss</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 flex flex-col items-center justify-center text-center px-4 overflow-hidden min-h-screen">
+        <!-- Background Ambient Glow -->
+        
+        
+        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+            <!-- Logo Placeholder -->
+          <div class="mb-8 p-2 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-2xl">
+                <img src="logo.png" alt="Flamingotrucken Logotyp" class="max-width: 100%; h-auto rounded-2xl object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x500/16161a/e81c73?text=Din+Logga+Här';">
+            </div>
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-2 text-white">
+                FLAMINGO<span class="text-flamingo-pink neon-text-pink">TRUCKEN</span>
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-bold tracking-[0.2em] text-flamingo-yellow mb-10">
+                STREETFOOD
+            </h2>
+            
+          <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl">
+                Streetfood gjord på noggrant utvalda råvaror. Följ den rosa flamingon för en oslagbar smakupplevelse!
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#meny" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-full transition border border-white/10">
+                    Se Vår Meny
+                </a>
+                <a href="#boka" class="px-8 py-4 bg-gradient-to-r from-flamingo-pink to-flamingo-orange text-white font-bold rounded-full glow-button">
+                    Boka Trucken
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meny Section -->
+    <section id="meny" class="py-24 bg-[#050505] relative border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 neon-text-orange text-flamingo-orange">VÅR MENY</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-flamingo-orange to-flamingo-yellow mx-auto rounded-full"></div>
+                <p class="mt-6 text-gray-400 text-lg max-w-2xl mx-auto">Vår passion är riktigt grym streetfood. Alltid tillagat med kärlek och noggrant utvalda råvaror.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Kategori: Burgare -->
+                <div class="md:col-span-2 mt-4 mb-2">
+                    <h3 class="text-3xl font-black text-flamingo-pink uppercase tracking-widest border-b border-white/10 pb-3 flex items-center gap-3">
+                        <i class="fa-solid fa-burger"></i> Burgare
+                    </h3>
+                </div>
+
+                <!-- Emelie -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(232,28,115,0.15)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase">Emelie</h4>
+                        <span class="text-flamingo-yellow font-bold text-lg whitespace-nowrap ml-4">165 kr</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        150g Nötkött, Ost, bacon, tryffelmajo, gurka
+                    </p>
+                </div>
+
+                <!-- Dunder -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(245,122,62,0.15)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase">Dunder</h4>
+                        <span class="text-flamingo-yellow font-bold text-lg whitespace-nowrap ml-4">165 kr</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        150g Nötkött, Ost, bacon, jalapeño & paprikamajo
+                    </p>
+                </div>
+
+                <!-- Grek -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(249,189,57,0.15)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase">Grek</h4>
+                        <span class="text-flamingo-yellow font-bold text-lg whitespace-nowrap ml-4">165 kr</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        150g Nötkött, Fetaost, sallad, gurka, tomat, rödlök
+                    </p>
+                </div>
+
+                <!-- Dunder chicken -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(232,28,115,0.15)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase">Dunder Chicken</h4>
+                        <span class="text-flamingo-yellow font-bold text-lg whitespace-nowrap ml-4">165 kr</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        2st krispiga filéer, ost, bacon, sallad, gurka, tomat, rödlök, jalapeno & paprikamajo
+                    </p>
+                </div>
+
+                <!-- Miljöaktivist -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase flex items-center gap-2">
+                            Miljöaktivist <i class="fa-solid fa-leaf text-emerald-500 text-sm"></i>
+                        </h4>
+                        <span class="text-flamingo-yellow font-bold text-lg whitespace-nowrap ml-4">165 kr</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Vegoburgare, sallad, tomat, gurka, rödlök, vegodressing
+                    </p>
+                </div>
+
+                <!-- Barn -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(249,189,57,0.15)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase">Barnburgare</h4>
+                        <span class="text-flamingo-yellow font-bold text-lg whitespace-nowrap ml-4">80 kr</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        90g Nötkött, ost, ketchup
+                    </p>
+                </div>
+
+                <!-- Kategori: Kyckling -->
+                <div class="md:col-span-2 mt-10 mb-2">
+                    <h3 class="text-3xl font-black text-flamingo-orange uppercase tracking-widest border-b border-white/10 pb-3 flex items-center gap-3">
+                        <i class="fa-solid fa-drumstick-bite"></i> Kyckling
+                    </h3>
+                </div>
+
+                <!-- Crispy chicken -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(245,122,62,0.15)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase">Crispy Chicken</h4>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Serveras med sallad, gurka & tomat.
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <div class="flex justify-between items-center border-t border-white/5 pt-2">
+                            <span class="text-gray-300">4 bitar + 1st Dipp</span>
+                            <span class="text-flamingo-yellow font-bold">115 kr</span>
+                        </div>
+                        <div class="flex justify-between items-center border-t border-white/5 pt-2">
+                            <span class="text-gray-300">6 bitar + 1st Dipp</span>
+                            <span class="text-flamingo-yellow font-bold">135 kr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kycklingspett -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(245,122,62,0.15)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase">Kycklingspett</h4>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Serveras med sallad, gurka & tomat.
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <div class="flex justify-between items-center border-t border-white/5 pt-2">
+                            <span class="text-gray-300">2 spett + 1st Dipp</span>
+                            <span class="text-flamingo-yellow font-bold">145 kr</span>
+                        </div>
+                        <div class="flex justify-between items-center border-t border-white/5 pt-2">
+                            <span class="text-gray-300">3 spett + 2st Dipp</span>
+                            <span class="text-flamingo-yellow font-bold">170 kr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kategori: Wrap -->
+                <div class="md:col-span-2 mt-10 mb-2">
+                    <h3 class="text-3xl font-black text-flamingo-yellow uppercase tracking-widest border-b border-white/10 pb-3 flex items-center gap-3">
+                        <i class="fa-solid fa-bread-slice"></i> Wrap
+                    </h3>
+                </div>
+
+                <!-- Wrap Kyckling -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(249,189,57,0.15)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase">Kycklingwrap</h4>
+                        <span class="text-flamingo-yellow font-bold text-lg whitespace-nowrap ml-4">165 kr</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Strimlad crispy chicken, sallad, gurka, tomat, rödlök, aioli
+                    </p>
+                </div>
+
+                <!-- Wrap Vegetarisk -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase">Vegetarisk Wrap</h4>
+                        <span class="text-flamingo-yellow font-bold text-lg whitespace-nowrap ml-4">165 kr</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Strimlad vegoburgare, sallad, gurka, tomat, rödlök, aioli
+                    </p>
+                </div>
+
+                <!-- Kategori: Sides & Dipp -->
+                <div class="md:col-span-2 mt-10 mb-2">
+                    <h3 class="text-3xl font-black text-white uppercase tracking-widest border-b border-white/10 pb-3 flex items-center gap-3">
+                        <i class="fa-solid fa-french-fries"></i> Sides & Dipp
+                    </h3>
+                </div>
+
+                <!-- Sides -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:bg-white/[0.03]">
+                    <h4 class="text-xl font-bold text-white tracking-wide uppercase mb-4 text-flamingo-pink">Sides</h4>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-white font-semibold block">Pommestallrik</span>
+                            </div>
+                            <span class="text-flamingo-yellow font-bold">65 kr</span>
+                        </div>
+                        <div class="flex justify-between items-start border-t border-white/5 pt-4">
+                            <div>
+                                <span class="text-white font-semibold block mb-1">F Yeah Fries</span>
+                              <p class="text-gray-400 text-xs leading-relaxed">Pommes, Cheddardressing</p>
+                                <p class="text-gray-400 text-xs leading-relaxed">jalapeños, rödlök, bacon.</p>
+                            </div>
+                            <span class="text-flamingo-yellow font-bold whitespace-nowrap ml-4">89kr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dippsåser -->
+                <div class="menu-card bg-flamingo-card p-6 rounded-2xl border border-white/5 shadow-lg transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:bg-white/[0.03]">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="text-xl font-bold text-white tracking-wide uppercase text-flamingo-orange">Dippsåser</h4>
+                        <span class="bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full border border-white/20">15 kr / st</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3 text-sm text-gray-300">
+                        <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-flamingo-pink"></div> Tryffelmajo</div>
+                        <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-flamingo-orange"></div> Aioli</div>
+                        <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-flamingo-yellow"></div> Srirachamajo</div>
+                        <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> Vegodressing</div>
+                        <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-flamingo-yellow"></div> Bea</div>
+                        <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-red-500"></div> Ketchup</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</section>
+
+    <!-- Hitta Oss Section -->
+    <section id="hitta" class="py-24 bg-black relative border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 neon-text-pink text-flamingo-pink">HITTA OSS</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-flamingo-pink to-flamingo-yellow mx-auto rounded-full"></div>
+                <p class="mt-6 text-gray-400 text-lg max-w-2xl mx-auto">Här ser du var vi parkerar i veckan. Kom förbi och stilla hungern!</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-10">
+                <!-- Schema -->
+                <div class="lg:w-1/3 bg-flamingo-card p-8 rounded-2xl border border-white/5 shadow-xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                        <i class="fa-regular fa-calendar-days text-flamingo-pink"></i> Veckoschema
+                    </h3>
+                    <ul class="space-y-5">
+                        <li class="flex justify-between items-center text-gray-300 border-b border-white/5 pb-2">
+                            <span class="font-bold text-white">Måndag</span>
+                            <span class="text-sm italic text-gray-500">Stängt</span>
+                        </li>
+                        <li class="flex justify-between items-center text-gray-300 border-b border-white/5 pb-2">
+                            <span class="font-bold text-flamingo-orange">Tisdag</span>
+                            <div class="text-right">
+                                <span class="text-sm italic text-gray-500">Stängt</span>
+                                <span class="text-xs text-flamingo-orange font-bold mt-1"></span>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center text-gray-300 border-b border-white/5 pb-2">
+                            <span class="font-bold text-flamingo-yellow">Onsdag</span>
+                            <div class="text-right">
+                                <span class="block text-sm">Automat Ekängen</span>
+                                <span class="text-xs text-flamingo-yellow font-bold mt-1">17:00 - 19:30</span>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center text-gray-300 border-b border-white/5 pb-2">
+                            <span class="font-bold text-flamingo-pink">Torsdag</span>
+                            <div class="text-right">
+                                <span class="block text-sm">ICA Nära Skillingen</span>
+                                <span class="text-xs text-flamingo-pink font-bold mt-1">17:00 - 19:30</span>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center text-gray-300 border-b border-white/5 pb-2">
+                            <span class="font-bold text-flamingo-orange">Fredag</span>
+                            <div class="text-right">
+                                <span class="text-sm italic text-gray-500">Stängt</span>
+                                <span class="text-xs text-flamingo-orange font-bold mt-1"></span>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center text-gray-300 pt-1">
+                            <span class="font-bold text-white">Lördag</span>
+                            <span class="text-sm italic text-gray-500">Stängt</span>
+                        </li>
+						<li class="flex justify-between items-center text-gray-300 border-b border-white/5 pb-2">
+                            <span class="font-bold text-flamingo-pink">Söndag</span>
+                            <div class="text-right">
+                                <span class="text-sm italic text-gray-500">Stängt</span>
+                                <span class="text-xs text-flamingo-pink font-bold mt-1"></span>
+                            </div>
+                    </ul>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div class="lg:w-2/3 min-h-[350px] lg:h-auto rounded-2xl overflow-hidden border border-white/10 relative group">
+                    <div class="absolute inset-0 bg-flamingo-pink/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Link%C3%B6ping&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="absolute inset-0 w-full h-full grayscale-[30%] group-hover:grayscale-0 transition-all duration-500">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boka Trucken Section -->
+    <section id="boka" class="py-32 relative bg-gradient-to-b from-flamingo-dark to-black border-t border-white/5">
+        <!-- Decoration -->
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-flamingo-pink/5 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <i class="fa-solid fa-truck-fast text-6xl text-flamingo-pink mb-6 neon-text-pink"></i>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">BOKA TRUCKEN TILL DITT EVENT</h2>
+            <p class="text-xl text-gray-300 mb-10 leading-relaxed">
+                Planerar du fest, bröllop, företagsevent eller festival? Vi rullar till er <span class="text-flamingo-yellow font-bold">&nbsp;</span> och serverar fantastisk streetfood direkt från luckan. Gör ditt nästa event oförglömligt med Flamingotrucken!
+            </p>
+            
+            <!-- Tally Embed Container -->
+            <div class="w-full max-w-3xl mx-auto bg-flamingo-card/40 backdrop-blur-md rounded-3xl border border-white/10 shadow-[0_0_30px_rgba(232,28,115,0.15)] overflow-hidden text-left p-2 sm:p-4 transition-all duration-300 hover:border-flamingo-pink/50">
+                <iframe 
+                  data-tally-src="https://tally.so/embed/VpLgMy?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                  loading="lazy" 
+                  width="100%" 
+                  height="600" 
+                  frameborder="0" 
+                  marginheight="0" 
+                  marginwidth="0" 
+                  title="Bokningsförfrågan">
+                </iframe>
+                <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-10">
+            
+            <div class="text-center md:text-left">
+                <span class="text-2xl font-black tracking-wider text-white">
+                    FLAMINGO<span class="text-flamingo-pink neon-text-pink">TRUCKEN</span>
+                </span>
+                <p class="text-gray-500 mt-2 text-sm">© 2026 Flamingotrucken. Alla rättigheter reserverade.</p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end text-gray-300 space-y-4">
+                <a href="mailto:flamingotrucken@gmail.com" class="group flex items-center text-lg hover:text-flamingo-pink transition-all duration-300">
+                    <span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mr-3 group-hover:bg-flamingo-pink/20 transition-colors border border-white/10 group-hover:border-flamingo-pink/50">
+                        <i class="fa-solid fa-envelope text-flamingo-orange group-hover:text-flamingo-pink"></i>
+                    </span>
+                    flamingotrucken@gmail.com
+                </a>
+                <a href="tel:013-4956801" class="group flex items-center text-lg hover:text-flamingo-yellow transition-all duration-300">
+                    <span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mr-3 group-hover:bg-flamingo-yellow/20 transition-colors border border-white/10 group-hover:border-flamingo-yellow/50">
+                        <i class="fa-solid fa-phone text-flamingo-orange group-hover:text-flamingo-yellow"></i>
+                    </span>
+                    013-495 68 01
+                </a>
+                <div class="flex space-x-4 pt-2">
+                    <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-flamingo-pink/30 hover:border-flamingo-pink/50 border border-white/10 hover:shadow-[0_0_15px_rgba(232,28,115,0.5)] transition-all text-xl"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-flamingo-orange/30 hover:border-flamingo-orange/50 border border-white/10 hover:shadow-[0_0_15px_rgba(245,122,62,0.5)] transition-all text-xl"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
